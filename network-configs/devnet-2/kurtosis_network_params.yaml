@@ -1,0 +1,20 @@
+# This file is used by kurtosis when deploying the necessary resources on your gke cluster
+# Example to run it:
+# kurtosis run github.com/ethpandaops/ethereum-package --args-file ./kurtosis_network_params.yaml --image-download always
+participants:
+  - el_type: geth
+    el_log_level: "trace"
+    cl_type: lighthouse
+    cl_log_level: "trace"
+    count: 1
+network_params:
+  network: "uct_finhub-devnet-2"
+  network_id: "710"
+  devnet_repo: "FinHubSA"
+additional_services:
+  - dora
+port_publisher:
+  # exposes the devnet loadbalancer IP for discoverability
+  nat_exit_ip: <devnet_nodes_loadbalancer_ip> #insert the loadbalancer static IP to expose your nodes if you have one
+checkpoint_sync_enabled: true
+checkpoint_sync_url: "http://157.173.125.128:8001"
