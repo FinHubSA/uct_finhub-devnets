@@ -1,6 +1,6 @@
 # This file is used by kurtosis when deploying the necessary resources on your gke cluster
 # Example to run it:
-# kurtosis run github.com/ethpandaops/ethereum-package --args-file ./kurtosis_network_params.yaml --image-download always
+# kurtosis run github.com/ethpandaops/ethereum-package --args-file ./network-configs/devnet-1/kurtosis_network_params.yaml --image-download always
 participants:
   - el_type: geth
     el_log_level: "trace"
