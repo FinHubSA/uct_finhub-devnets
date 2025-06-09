@@ -29,7 +29,7 @@ The preparation steps are the same as the ones in the guide for [creating an eth
 2. To deploy a node on our uct_finhub-devnet-1 network:
    - Run the ethereum kurtosis package as below:
      ```bash
-     kurtosis run github.com/ethpandaops/ethereum-package --args-file ./kurtosis_network_params.yaml --image-download always
+     kurtosis run github.com/ethpandaops/ethereum-package --args-file ./network-configs/devnet-1/kurtosis_network_params.yaml --image-download always
      ```
 
 
