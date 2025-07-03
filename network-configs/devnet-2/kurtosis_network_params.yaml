@@ -4,8 +4,10 @@
 participants:
   - el_type: geth
     el_log_level: "trace"
+    el_image: "ethereum/client-go:latest"
     cl_type: lighthouse
     cl_log_level: "trace"
+    cl_image: "sigp/lighthouse:latest"
     count: 1
 network_params:
   network: "uct_finhub-devnet-2"
@@ -13,8 +15,8 @@ network_params:
   devnet_repo: "FinHubSA"
 additional_services:
   - dora
-port_publisher:
-  # exposes the devnet loadbalancer IP for discoverability
-  nat_exit_ip: 34.35.4.203 #insert the loadbalancer static IP to expose your nodes if you have one
+# port_publisher:
+#   # exposes the devnet loadbalancer IP for discoverability
+#   nat_exit_ip: 34.35.4.203 #insert the loadbalancer static IP to expose your nodes if you have one
 checkpoint_sync_enabled: true
 checkpoint_sync_url: "http://157.173.125.128:8001"
