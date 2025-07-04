@@ -1,5 +1,5 @@
 # Example for running the file in your command line:
-# NAMESPACE=kt-brisk-cliff IP=34.35.4.203 envsubst < loadbalancer-service.yml | kubectl apply -f -
+# NAMESPACE=kt-solitary-cave IP=34.35.4.203 envsubst < loadbalancer-service.yml | kubectl apply -f -
 apiVersion: v1
 kind: Service
 metadata:
@@ -21,6 +21,11 @@ spec:
       protocol: TCP
       port: 8545
       targetPort: 8545
+    # ws: 8546/tcp - execution layer
+    - name: ws
+      protocol: TCP
+      port: 8546
+      targetPort: 8546
     # discovery: 30303 - execution layer
     - name: tcp-discovery
       protocol: TCP
@@ -67,10 +72,10 @@ spec:
       protocol: TCP
     # NOTE: We are not using this because it causes a conflict with TCP port 9000 discovery
     # discovery: 9000 - consensus layer
-    # - name: discovery
-    #   port: 9000
-    #   targetPort: 9000
-    #   protocol: TCP
+    - name: discovery
+      port: 9000
+      targetPort: 9000
+      protocol: TCP
 ---
 apiVersion: v1
 kind: Service
